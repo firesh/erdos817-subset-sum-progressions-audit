@@ -58,7 +58,7 @@ independent Python enumerator `verify_exact.py`.
 | 3 | 8 | {5,7,8} | 8 | 9 | complete |
 | 4 | 22 | {7,19,21,22} | 21 | 27 | complete |
 | 5 | **60** | {19,52,57,59,60} | 56 | 81 | complete |
-| 6 | 168 (literature), $\ge163$ here | {107,145,159,162,166,168} | 152 | 243 | incomplete: $N\le162$ excluded |
+| 6 | **168** | {107,145,159,162,164,168} (computed here) and {107,145,159,162,166,168} (forum) | 152 | 243 | complete: $N\le167$ excluded |
 | 7 | — | — | 419 | 729 | incomplete: $N\le313$ excluded |
 
 $b_n=\frac{T_n-1}{2}+\sum_{j<n}T_j$, $T_j=[x^j](1+x+x^2)^j$, is the exact bandwidth of
@@ -70,7 +70,8 @@ Additional verified observations.
 
 * $g_3(n)/3^n$ is non-increasing, because $A\mapsto\{1\}\cup 3A$ is admissible when $A$ is
   (a relation $c_0+\sum_i c_i 3a_i=0$ forces $3\mid c_0$, so $c_0=0$), hence
-  $g_3(n+1)\le 3g_3(n)$. Ratios: $0.333,0.333,0.296,0.272,0.247,0.230$.
+  $g_3(n+1)\le 3g_3(n)$. Ratios: $0.333,0.333,0.296,0.272,0.247,0.230$; the successive ratios
+  $g_3(n)/g_3(n-1)$ are $3, 2.67, 2.75, 2.73, 2.8$, all below $3$ as required.
 * The extremal sets for $n\le5$ are exactly the "offsets from the maximum" sets
   $\{G_n-G_k:0\le k<n\}$ with $(G_n)=(0,1,3,8,22,60)$; the pattern fails at $n=6$:
   $\{108,146,160,165,167,168\}$ is **not** admissible, checked directly.
@@ -82,6 +83,13 @@ Additional verified observations.
   minimised over admissible $A$) is $8,22,59$ for $n=3,4,5$; at $n=5$ it is strictly below
   $g_3(5)=60$, so the abstract grid bandwidth $b_n$ is not attained by any linear form
   there. This is Korsky's Remark 4.5 "bandwidth barrier" in concrete form.
+* The exhaustive searches are complete for $n\le6$: for $n=6$ every $6$-subset of $[167]$ was
+  rejected (2.4 billion search nodes) and $g_3(6)=168$ is attained. Both values found here,
+  $g_3(5)=60$ and $g_3(6)=168$, agree with the independently posted values of 2026-09-17 in
+  the problem's discussion thread, which use the different witnesses
+  $\{38,52,57,59,60\}$ and $\{107,145,159,162,166,168\}$; all four witnesses were verified
+  here by direct enumeration. The $n=7$ search is incomplete: it rejects $N\le313$, which
+  does not improve on the proven bound $b_7=419$.
 
 ## 3. The asked question has been answered, negatively
 

@@ -11,14 +11,14 @@ the resolution.
 
 ## Main results recorded here
 
-* `g_3(1..5) = 1, 3, 8, 22, 60`, with witnesses `{1}`, `{1,3}`, `{5,7,8}`, `{7,19,21,22}`,
-  `{19,52,57,59,60}`. The values for `n ≤ 4` reproduce Korsky (arXiv:2606.24139,
-  Remark 4.6); `g_3(5) = 60` is an exhaustive computation of this session (a forum post of
-  2026-09-17 reports the same value with a different witness).
-* No `A ⊆ [162]` of size 6 and no `A ⊆ [313]` of size 7 is 2-fold subset-sum-distinct
-  (incomplete searches; they do not improve on the proven bandwidth bounds 152 and 419).
-  The exact value `g_3(6) = 168` is reported in the same forum thread but is not
-  reproduced here.
+* `g_3(1..6) = 1, 3, 8, 22, 60, 168`, with witnesses `{1}`, `{1,3}`, `{5,7,8}`,
+  `{7,19,21,22}`, `{19,52,57,59,60}`, `{107,145,159,162,164,168}`. The values for `n ≤ 4`
+  reproduce Korsky (arXiv:2606.24139, Remark 4.6); `g_3(5) = 60` and `g_3(6) = 168` are
+  exhaustive computations of this session (forum posts of 2026-09-17 report the same two
+  values with different witnesses, which are also verified here).
+* No `A ⊆ [167]` of size 6 and no `A ⊆ [313]` of size 7 is 2-fold subset-sum-distinct, so
+  `g_3(6) = 168` exactly. The `n = 7` search is incomplete and does not improve on the
+  proven bound `b_7 = 419`.
 * `H(A)` is 3-AP-free **iff** `eps -> sum eps_i a_i` is injective on `{0,1,2}^n`
   (Korsky, Prop. 4.1; re-proved in `REPORT.md`), so
   `g_3(n) = min { max_i a_i : that map is injective }`, which makes the search a finite
