@@ -115,14 +115,22 @@ Chain of evidence, all checked here except where marked:
 5. **Sharper quantitative form**: a forum comment of 17 Sep 2026 (Korsky, adapting a
    construction of B. Alexeev) gives $g_3(n)\ll 3^n/n^{1/3}$, with
    $g_3(n)\le((3/4)^{1/3}+o(1))\,3^n/n^{1/3}$.
-6. **Formal verification artifact**: Zenodo record 22638810 (V2, 7 Sep 2026) ships
-   `erdos817_negative_lean.zip`, a 3185-line single-file Lean 4 certificate
-   (`import Mathlib`, toolchain `leanprover/lean4:v4.34.0-rc1`, no `sorry`/`admit`, ending
-   in `#print axioms`). A build attempt is recorded in `LEAN.md`.
+6. **Formal verification artifact — reproduced here**: Zenodo record 22638810 (V2,
+   7 Sep 2026) ships `erdos817_negative_lean.zip`, a 3185-line single-file Lean 4
+   certificate (`import Mathlib`, toolchain `leanprover/lean4:v4.34.0-rc1`, no
+   `sorry`/`admit`/`axiom`, ending in `#print axioms`). It was built in this session on an
+   independent machine against the pinned Mathlib revision: `Build completed successfully
+   (8708 jobs)`, no errors, and
+   `'ErdosSarkozy817.not_erdos_817' depends on axioms: [propext, Classical.choice,
+   Quot.sound]` — i.e. the negation of `3^n = O(g_3(n))` is kernel-checked for the Formal
+   Conjectures definition of `g`. Details, commands and the raw transcript are in `LEAN.md`
+   and `lean-build.log`. This is third-party work that is being reproduced, not claimed.
 
 **Status caveats.** The database still displays #817 as OPEN, lists Costa's entry under
 "proof claims" as a **partial** proof, and states that appearing there is no guarantee of
-correctness. Costa's preprint is unrefereed, 13 days old, and its one non-elementary input
+correctness. The Lean certificate is distributed as a Zenodo archive rather than as a
+public repository with a branch and a pinned commit, so it does not meet the awards
+repository's pinning convention even though it now compiles here. Costa's preprint is unrefereed, 13 days old, and its one non-elementary input
 is an AI-generated construction. The classification used here is therefore **verified
 argument, unrefereed resolution**: enough for a maintainer-review record update, not enough
 for an award claim.
